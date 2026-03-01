@@ -1,0 +1,11 @@
+CREATE TABLE complaints (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tracking_id VARCHAR(12) UNIQUE NOT NULL,
+    category ENUM('Facility', 'Bullying', 'Academic', 'Other') NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    student_name VARCHAR(100) DEFAULT 'Anonymous',
+    status ENUM('Pending', 'Under Review', 'Resolved', 'Dismissed') DEFAULT 'Pending',
+    admin_note TEXT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
